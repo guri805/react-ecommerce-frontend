@@ -4,12 +4,14 @@ import InputComponent from '../FormComponent/inputComponent';
 import Btn from '../Comman/btn';
 import { FaRegHeart } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
-import { Badge } from '@mui/material';
+import { LuGitCompareArrows } from "react-icons/lu";
+import { Badge, Tooltip } from '@mui/material';
+import Navigation from './Navigation';
 
 const Header = () => {
   return (
     <div>
-      <header>
+      <header className='bg-white'>
         {/* Top stripe */}
         <div className="top-strip py-1 border-y border-gray-300 bg-gray-100">
           <div className="container mx-auto px-4">
@@ -45,7 +47,7 @@ const Header = () => {
         {/* Main header */}
         <div className="header border-b border-gray-300 bg-white">
           <div className="container mx-auto px-4 flex items-center justify-between py-4">
-            <div className="col-one w-[25%]">
+            <div className="col-one w-[25%] ">
               <Link to="/">
                 <img src="/logo.png" alt="Logo" width={120} className="ms-6" />
               </Link>
@@ -80,27 +82,45 @@ const Header = () => {
               </div>
               <div className="w-[1px] h-10 bg-gray-300 mx-4"></div>
               <div className="flex items-center space-x-4">
-                <Badge badgeContent={4} sx={{
-                  '& .MuiBadge-badge': {
-                    backgroundColor: '#ff5252',
-                    color: 'white',
-                  },
-                }}>
-                  <FaRegHeart className="text-gray-600 hover:text-primary w-6 h-6 cursor-pointer transition" />
-                </Badge>
+                <Tooltip title="Compare" arrow>
+                  <Badge badgeContent={4} sx={{
+                    '& .MuiBadge-badge': {
+                      backgroundColor: '#ff5252',
+                      color: 'white',
+                    },
+                  }}>
+                    <LuGitCompareArrows className="text-gray-600 hover:text-primary w-6 h-6 cursor-pointer transition" />
+                  </Badge>
+                </Tooltip>
 
-                <Badge badgeContent={2} sx={{
-                  '& .MuiBadge-badge': {
-                    backgroundColor: '#ff5252',
-                    color: 'white',
-                  },
-                }}>
-                  <MdOutlineShoppingCart className="text-gray-600 hover:text-primary w-6 h-6 cursor-pointer transition" />
-                </Badge>
+                <Tooltip title="Wishlist" arrow>
+                  <Badge badgeContent={4} sx={{
+                    '& .MuiBadge-badge': {
+                      backgroundColor: '#ff5252',
+                      color: 'white',
+                    },
+                  }}>
+                    <FaRegHeart className="text-gray-600 hover:text-primary w-6 h-6 cursor-pointer transition" />
+                  </Badge>
+                </Tooltip>
+
+                <Tooltip title="Add to Cart" arrow>
+                  <Badge badgeContent={2} sx={{
+                    '& .MuiBadge-badge': {
+                      backgroundColor: '#ff5252',
+                      color: 'white',
+                    },
+                  }}>
+                    <Link to="/cart"><MdOutlineShoppingCart className="text-gray-600 hover:text-primary w-6 h-7 cursor-pointer transition" /></Link>
+                  </Badge>
+                </Tooltip>
               </div>
             </div>
           </div>
         </div>
+
+        {/* navigation  */}
+        <Navigation />
       </header>
     </div>
   );

@@ -1,11 +1,193 @@
-import React from 'react'
+import React, { useState } from 'react';
+
+// Importing Components
+import HomeSlide from '../../components/HomeComponent/HomeSlide';
+import HomeCartSlider from '../../components/HomeComponent/HomeCartSlider';
+import AddBannerSlider from '../../components/HomeComponent/AddBannerSlider';
+import Productslider from '../../components/Comman/Productslider';
+import { FaGreaterThan } from "react-icons/fa6";
+
+// Importing Icons and Styles
+import { FaShippingFast } from "react-icons/fa";
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import './style.css';
+import Footer from '../../components/Comman/Footer';
 
 const Home = () => {
+  // State for handling the active tab in the Tabs component
+  const [value, setValue] = useState(0);
+
+  // Handle tab change event
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <div>
-      home
-    </div>
-  )
-}
+      {/* Hero Section with Slider */}
+      <HomeSlide />
 
-export default Home
+      {/* Home Cart Slider */}
+      <HomeCartSlider />
+
+      {/* Free Shipping Banner Section */}
+      <section className="py-5 bg-white">
+        <div className="container">
+          <div className="freeshiping w-[80%] m-auto py-3 px-8 border-[3px] border-red-500 flex items-center justify-between rounded-md">
+            {/* Free Shipping Information */}
+            <div className="col-one flex items-center gap-4">
+              <FaShippingFast className="text-[40px]" />
+              <span className="text-[20px] font-[600]">FREE SHIPPING</span>
+            </div>
+
+            {/* Vertical Divider */}
+            <div className="h-8 bg-slate-400 w-[2px]"></div>
+
+            {/* Additional Free Shipping Details */}
+            <div className="col-two text-[15px]">
+              <p>Free Delivery Now On Your First Order and over $200</p>
+            </div>
+
+            {/* Vertical Divider */}
+            <div className="h-8 bg-slate-400 w-[2px]"></div>
+
+            {/* Minimum Order Details */}
+            <div className="col-three text-[20px] font-[600]">
+              <p>-ONLY $200*</p>
+            </div>
+          </div>
+
+          {/* Advertisement Banner Slider */}
+          {/* <AddBannerSlider /> */}
+        </div>
+      </section>
+
+
+      {/* Popular Products Section */}
+      <section className="bg-white py-8">
+        <div className="container">
+          {/* Section Header */}
+          <div className="flex items-center justify-between">
+            {/* Left Section: Title and Description */}
+            <div className="leftSec">
+              <h3 className="text-[22px] font-[500]">Popular Products</h3>
+              <p>Do not miss the current offers until the end of March.</p>
+            </div>
+
+            {/* Right Section: Tabs for Categories */}
+            <div className="rightSec w-[60%]">
+              <Tabs
+                value={value}
+                onChange={handleChange}
+                variant="scrollable"
+                scrollButtons
+                allowScrollButtonsMobile
+                aria-label="Category Tabs"
+              >
+                <Tab label="Fashion" className="link" />
+                <Tab label="Electronics" />
+                <Tab label="Bags" />
+                <Tab label="Footwear" />
+                <Tab label="Groceries" />
+                <Tab label="Beauty" />
+                <Tab label="Wellness" />
+                <Tab label="Jewelry" />
+              </Tabs>
+            </div>
+          </div>
+
+          {/* Product Slider Section */}
+          <div className="ProductSlider my-6">
+            <Productslider items={5} />
+          </div>
+          <AddBannerSlider />
+        </div>
+      </section>
+
+      {/* latest product section */}
+      <section className='latestProduct bg-white pb-7'>
+        <div className="ProductSlider">
+          <div className="container">
+            <div className="leftSec pb-7">
+              <h3 className="text-[22px] font-[500]">Latest Products</h3>
+            </div>
+            <div className="product mb-5">
+              <Productslider items={5} />
+            </div>
+            {/* Advertisement Banner Slider */}
+          </div>
+        </div>
+      </section>
+
+      {/* shop for you section */}
+      <section className='shopForYou pb-7'>
+        <div className="container">
+          <div className="maincontainer flex">
+            <div className="leftcontainer bg-white flex flex-col p-4 border mt-7 basis-1/3">
+              <div className="heading flex justify-between items-center mb-7">
+                <h1 className='text-[22px] font-[500]'>Men's Fashion</h1>
+                <button className='bg-blue-400 text-white p-2 rounded-full'>
+                  <FaGreaterThan />
+                </button>
+              </div>
+              <div className="boxes grid grid-cols-2 gap-x-3 gap-y-5">
+                <div className="box">
+                  <div className="subbox border-[1px] border-gray-300 p-3 rounded-lg bg-gray-100">
+                    <img src="https://api.spicezgold.com/download/file_1734529474612_gespo-peach-solid-mandarin-collar-half-sleeve-casual-t-shirt-product-images-rvrtzhyumb-0-202304080900.webp" alt="" className='h-[150px] w-[100%] object-cover object-top rounded-md' />
+                    <p className=' mt-[2px]'>Men's T-shirt</p>
+                    <p className='text-green-700 font-medium text-lg mt-[-4px]'>Min.70% off</p>
+                  </div>
+                </div>
+                <div className="box">
+                  <div className="subbox border-[1px] border-gray-300 p-3 rounded-lg bg-gray-100">
+                    <img src="https://api.spicezgold.com/download/file_1734529474612_gespo-peach-solid-mandarin-collar-half-sleeve-casual-t-shirt-product-images-rvrtzhyumb-0-202304080900.webp" alt="" className='h-[150px] w-[100%] object-cover object-top rounded-md' />
+                    <p className=' mt-[2px] '>Men's T-shirt</p>
+                    <p className='text-green-700 font-medium text-lg mt-[-4px]'>Min.70% off</p>
+                  </div>
+                </div>
+                <div className="box">
+                  <div className="subbox border-[1px] border-gray-300 p-3 rounded-lg bg-gray-100">
+                    <img src="https://api.spicezgold.com/download/file_1734529474612_gespo-peach-solid-mandarin-collar-half-sleeve-casual-t-shirt-product-images-rvrtzhyumb-0-202304080900.webp" alt="" className='h-[150px] w-[100%] object-cover object-top rounded-md' />
+                    <p className=' mt-[2px]'>Men's T-shirt</p>
+                    <p className='text-green-700 font-medium text-lg mt-[-4px]'>Min.70% off</p>
+                  </div>
+                </div>
+                <div className="box">
+                  <div className="subbox border-[1px] border-gray-300 p-3 rounded-lg bg-gray-100">
+                    <img src="https://api.spicezgold.com/download/file_1734529474612_gespo-peach-solid-mandarin-collar-half-sleeve-casual-t-shirt-product-images-rvrtzhyumb-0-202304080900.webp" alt="" className='h-[150px] w-[100%] object-cover object-top rounded-md' />
+                    <p className=' mt-[2px]'>Men's T-shirt</p>
+                    <p className='text-green-700 font-medium text-lg mt-[-4px]'>Min.70% off</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="rightcontainer ms-5 p-7 flex items-center justify-center basis-2/3 pr-0 mb-[-20px]">
+              <img
+                src="https://images01.nicepagecdn.com/page/10/92/website-template-preview-109210.jpg"
+                alt="image"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured product section */}
+      <section className='featuredProduct bg-white pb-7 pt-4'>
+        <div className="ProductSlider">
+          <div className="container">
+            <div className="leftSec pb-7">
+              <h3 className="text-[22px] font-[500]">Featured Products</h3>
+            </div>
+            <div className="product mb-5">
+              <Productslider items={5} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+};
+
+export default Home;
