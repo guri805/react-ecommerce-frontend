@@ -137,7 +137,7 @@ const AddCart = () => {
                                 <p>Total</p>
                                 <p className='font-medium'>$60.00</p>
                             </div>
-                            <button className='bg-primary text-white w-full rounded-md mt-3 p-2'>Proceed to Checkout</button>
+                            <button className='bg-primary text-white w-full rounded-md mt-3 p-2'><Link to={"/checkout"}>Proceed to Checkout</Link></button>
                         </div>
                     </div>
                 </div>

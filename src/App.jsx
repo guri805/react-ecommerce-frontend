@@ -25,8 +25,12 @@ import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import AddCart from "./pages/Cart";
-
-
+import Verify from "./pages/Verify";
+import toast, { Toaster } from 'react-hot-toast';
+import ForgotPassword from "./pages/ForgotPassword";
+import Checkout from "./pages/CheckPage";
+import MyAccount from "./pages/MyAccount"
+import MyList from "./pages/MyList";
 // Create a context
 const AppContext = createContext();
 
@@ -35,6 +39,7 @@ function App() {
   const [maxWidth, setMaxWidth] = useState('md');
   const [sliderIndex, setSliderIndex] = useState(0)
   const [number, setNumber] = useState(0)
+  const [isLogin, setIsLogin] = useState(true)
   const zoomsliderBig = useRef()
   const zoomsliderSmall = useRef()
   const goTo = (index) => {
@@ -49,9 +54,20 @@ function App() {
   const handleCloseOpenProductDetailModel = () => {
     setOpenProductDetailModel(false);
   };
+  const openAlertBox = (status,msg) =>{
+    if (status==="success") {
+      toast.success(msg); 
+    }
+    if (status==="error") {
+      toast.error(msg);
+    }
+  }
 
   const value = {
-    setOpenProductDetailModel
+    setOpenProductDetailModel,
+    openAlertBox,
+    isLogin,
+    setIsLogin
   };
   const imageList = [
     {
@@ -88,11 +104,18 @@ function App() {
             <Route path="/productlist" element={<ProductList />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<AddCart />} />
+            <Route path="/verify" element={<Verify />} />
+            <Route path="/forgotPassword" element={<ForgotPassword/>}/>
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/myaccount" element={<MyAccount />} />
+            <Route path="/mylist" element={<MyList />} />
           </Routes>
           <Footer />
         </AppContext.Provider>
       </BrowserRouter>
-     
+      <Toaster />
+
+
       <Dialog
         open={openProductDetailModel}
         maxWidth={maxWidth}
