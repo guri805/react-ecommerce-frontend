@@ -17,7 +17,7 @@ const AddBannerSlider = () => {
             <SwiperSlider slidesPerView={4} spaceBetween={10} autoplay={false} className="swiperAddBannerSlider">
                 {images.map((curEle, index) => (
                     <SwiperSlide key={index} className="w-full">
-                        <div className="box py-7 px-3 bg-white rounded-sm">
+                        <div className="box py-7 px-3 rounded-sm">
                             <Bannerbox src={curEle.source} alt={curEle.alt} />
                         </div>
                     </SwiperSlide>

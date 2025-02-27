@@ -28,8 +28,16 @@ body {
     background: #fff;
 }
 
-.scroll::-webkit-scrollbar{
+.scroll::-webkit-scrollbar {
     width: 4px !important;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
 }
 
 .container {
@@ -157,17 +165,19 @@ body {
     color: #ff5252 !important;
 }
 
-.sortbtn Button.actice svg{
+.sortbtn Button.actice svg {
     color: #ff5252;
 }
-.Mui-selected.MuiPaginationItem-page{
+
+.Mui-selected.MuiPaginationItem-page {
     background-color: #ff5252 !important;
     color: #fff !important;
 }
+
 /* .swiper.swiper-initialized.swiper-vertical.swiper-css-mode.verticalSwiper{
     
 } */
-.verticalSwiper .swiper-button-next{
+.verticalSwiper .swiper-button-next {
     bottom: 0px !important;
     right: inherit !important;
     top: inherit !important;
@@ -175,10 +185,12 @@ body {
     height: 20px !important;
     border-radius: 0px !important;
 }
-.verticalSwiper .swiper-button-next::after{
+
+.verticalSwiper .swiper-button-next::after {
     transform: rotate(90deg) !important;
 }
-.verticalSwiper .swiper-button-prev{
+
+.verticalSwiper .swiper-button-prev {
     bottom: inherit !important;
     left: inherit !important;
     top: 22px !important;
@@ -186,7 +198,8 @@ body {
     height: 20px !important;
     border-radius: 0px !important;
 }
-.verticalSwiper .swiper-button-prev::after{
+
+.verticalSwiper .swiper-button-prev::after {
     transform: rotate(90deg) !important;
 }
 
@@ -194,33 +207,63 @@ body {
     width: 180px !important;
 }
 
-.myAccounrTabs li a{
+.sideStripe li {
     position: relative;
-    display: block;
+}
+
+.sideStripe li.active > button {
+    position: relative;
     padding-left: 10px;
 }
 
-.myAccounrTabs li a::before{
+/* Red stripe for main menu items (Products & Category) */
+.sideStripe li.active > button::before {
+    content: '';
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -10px;
+    background: #ff5252;
+    opacity: 1;
+}
+
+/* Apply red color to active icons */
+.sideStripe li.active > button svg {
+    color: #ff5252 !important;
+}
+
+/* Ensure active effect on sub-links */
+.sideStripe li a {
+    position: relative;
+    display: block;
+}
+
+.sideStripe li a::before {
     content: '';
     width: 3px;
     height: 50%;
     position: absolute;
     top: 50%;
-    left: 0px;
+    left: -10px;
     background: #ff5252;
     opacity: 0;
     transition: all 0.3s ease-in-out;
 }
 
-.myAccounrTabs li a.active::before {
+.sideStripe li a.active::before {
     height: 100% !important;
     top: 0px !important;
     background: #ff5252 !important;
     opacity: 1;
 }
 
-.myAccounrTabs li a.active button svg{
+/* Apply active color to icons inside active links */
+.sideStripe li a.active button svg {
     color: #ff5252 !important;
-    opacity: 1 !important;
 }
 
+.btnBlue {
+    background-color: #3872fa;
+    color: white;
+}

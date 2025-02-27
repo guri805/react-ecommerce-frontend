@@ -12,7 +12,11 @@ import { FaShippingFast } from "react-icons/fa";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import './style.css';
-import Footer from '../../components/Comman/Footer';
+import { LiaShippingFastSolid } from "react-icons/lia";
+import { IoWalletOutline } from "react-icons/io5";
+import { ImGift } from "react-icons/im";
+import { BiSupport } from "react-icons/bi";
+
 
 const Home = () => {
   // State for handling the active tab in the Tabs component
@@ -101,12 +105,16 @@ const Home = () => {
           <div className="ProductSlider my-6">
             <Productslider items={5} />
           </div>
+        </div>
+      </section>
+      {/* banner */}
+      <section className='banner'>
+        <div className="container">
           <AddBannerSlider />
         </div>
       </section>
-
       {/* latest product section */}
-      <section className='latestProduct bg-white pb-7'>
+      <section className='latestProduct bg-white py-7'>
         <div className="ProductSlider">
           <div className="container">
             <div className="leftSec pb-7">
@@ -186,6 +194,38 @@ const Home = () => {
         </div>
       </section>
 
+      {/* icons with description */}
+      <section className='icons'>
+        <div className="container">
+          <div className="boxes grid grid-cols-5 py-7 ">
+            <div className="box1 flex flex-col items-center justify-center group">
+              <LiaShippingFastSolid className='text-6xl group-hover:-translate-y-1 transition-transform duration-200' />
+              <p className='font-medium mt-1'>Free Shipping</p>
+              <p className='text-sm text-gray-700'>For all Orders Over $100</p>
+            </div>
+            <div className="box1 flex flex-col items-center justify-center group">
+              <img src="product-return.png" alt="" width={50} className='group-hover:-translate-y-1 transition-transform duration-200' />
+              <p className='font-medium mt-1'>30 Days Returns</p>
+              <p className='text-sm text-gray-700'>For an Exchange Product</p>
+            </div>
+            <div className="box1 flex flex-col items-center justify-center group">
+              <IoWalletOutline className='text-6xl group-hover:-translate-y-1 transition-transform duration-200' />
+              <p className='font-medium mt-1'>Secured Payment</p>
+              <p className='text-sm text-gray-700'>Payment Cards Accepted</p>
+            </div>
+            <div className="box1 flex flex-col items-center justify-center group">
+              <ImGift className='text-6xl group-hover:-translate-y-1 transition-transform duration-200' />
+              <p className='font-medium mt-1'>Special Gifts</p>
+              <p className='text-sm text-gray-700'>Our First Product Order</p>
+            </div>
+            <div className="box1 flex flex-col items-center justify-center group">
+              <BiSupport className='text-6xl group-hover:-translate-y-1 transition-transform duration-200' />
+              <p className='font-medium mt-1'>Support 24/7</p>
+              <p className='text-sm text-gray-700'>Contact us Anytime</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

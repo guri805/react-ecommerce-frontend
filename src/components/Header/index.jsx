@@ -10,6 +10,7 @@ import Navigation from './Navigation';
 import { AppContext } from '../../App';
 import { MdLogout } from "react-icons/md";
 import { IoBagCheckOutline } from "react-icons/io5";
+import { LuLayoutDashboard } from "react-icons/lu";
 
 
 const Header = () => {
@@ -109,13 +110,18 @@ const Header = () => {
                     className='mt-1 w-[300px]'
                   >
                     <Link to={"/myaccount"}>
-                    <MenuItem onClick={handleClose}>
-                      <FaRegUser className="mr-2 text-[16px]" /> My Account
-                    </MenuItem>
+                      <MenuItem onClick={handleClose}>
+                        <FaRegUser className="mr-2 text-[16px]" /> My Account
+                      </MenuItem>
                     </Link>
                     <MenuItem onClick={handleClose}>
                       <IoBagCheckOutline className="mr-2 text-[20px]" /> Order
                     </MenuItem>
+                    <Link to={"/dashboard"}>
+                      <MenuItem onClick={handleClose}>
+                        <LuLayoutDashboard className="mr-2 text-[20px]" /> Dashboard
+                      </MenuItem>
+                    </Link>
                     <MenuItem onClick={handleClose}>
                       <MdLogout className="mr-2 text-[16px]" /> Logout
                     </MenuItem>
@@ -150,6 +156,7 @@ const Header = () => {
                   </Badge>
                 </Tooltip>
 
+
                 <Tooltip title="Wishlist" arrow>
                   <Badge
                     badgeContent={4}
@@ -159,10 +166,12 @@ const Header = () => {
                         color: 'white',
                       },
                     }}
-                  >
-                    <FaRegHeart className="text-gray-600 hover:text-primary w-6 h-6 cursor-pointer transition" />
+                  > <Link to={"/wishlist"}>
+                      <FaRegHeart className="text-gray-600 hover:text-primary w-6 h-6 cursor-pointer transition" />
+                    </Link>
                   </Badge>
                 </Tooltip>
+
 
                 <Tooltip title="Add to Cart" arrow>
                   <Badge

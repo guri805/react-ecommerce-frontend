@@ -22,7 +22,7 @@ const MyAccountLeftSideBar = () => {
                 <h5 className="font-medium text-sm text-[rgba(0,0,0,0.7)]">gursangamsingh2@gmail.com</h5>
             </div>
 
-            <ul className='myAccounrTabs list-none'>
+            <ul className='myAccounrTabs sideStripe list-none'>
 
                 <li className='w-full '>
                     <NavLink to={"/myaccount"} className={({ isActive }) => isActive ? "active" : ""}>

@@ -10,7 +10,6 @@ import Signup from "./pages/Signup";
 import ProductList from "./pages/ProductList";
 import Footer from "./components/Comman/Footer";
 import ProductDetail from "./pages/ProductDetail";
-import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import ProductZoom from "./components/Comman/ProductZoom";
@@ -31,6 +30,17 @@ import ForgotPassword from "./pages/ForgotPassword";
 import Checkout from "./pages/CheckPage";
 import MyAccount from "./pages/MyAccount"
 import MyList from "./pages/MyList";
+import Order from "./pages/Order";
+import Dashboard from './pages/Dashboard';
+import ProductsList from './pages/ProductsList';
+import AddProduct from './pages/AddProduct';
+import CategoryList from './pages/CategoryList';
+import AddCategory from './pages/AddCategory';
+import SubCategoryList from './pages/SubCategoryList';
+import AddSubCategory from './pages/AddSubCategory';
+import Users from './pages/Users';
+import navigation from './components/Header/Navigation'
+import Wishlist from "./pages/Wishlist";
 // Create a context
 const AppContext = createContext();
 
@@ -54,11 +64,11 @@ function App() {
   const handleCloseOpenProductDetailModel = () => {
     setOpenProductDetailModel(false);
   };
-  const openAlertBox = (status,msg) =>{
-    if (status==="success") {
-      toast.success(msg); 
+  const openAlertBox = (status, msg) => {
+    if (status === "success") {
+      toast.success(msg);
     }
-    if (status==="error") {
+    if (status === "error") {
       toast.error(msg);
     }
   }
@@ -105,10 +115,22 @@ function App() {
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<AddCart />} />
             <Route path="/verify" element={<Verify />} />
-            <Route path="/forgotPassword" element={<ForgotPassword/>}/>
+            <Route path="/forgotPassword" element={<ForgotPassword />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/myaccount" element={<MyAccount />} />
             <Route path="/mylist" element={<MyList />} />
+            <Route path="/myorder" element={<Order />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/product/list" element={<ProductsList />} />
+            <Route path="/product/addproduct" element={<AddProduct />} />
+            <Route path="/category/list" element={<CategoryList />} />
+            <Route path="/category/addcategory" element={<AddCategory />} />
+            <Route path="/category/subcategorylist" element={<SubCategoryList />} />
+            <Route path="/category/addsubcategory" element={<AddSubCategory />} />
+            <Route path="/users" element={<Users />} />
+            <Route path="/productlist" element={<navigation />} />
+            <Route path="/wishlist" element={<Wishlist />} />
+
           </Routes>
           <Footer />
         </AppContext.Provider>

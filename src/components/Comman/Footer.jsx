@@ -11,41 +11,10 @@ import { FaCcVisa } from "react-icons/fa";
 const Footer = () => {
     return (
         <>
-            <section className='footer-section-one border-b-[1px] border-gray-300'>
+            {/* section one  */}
+            <section className='footer-section-one bg-white border-t-2'>
                 <div className="container">
-                    <div className="boxes grid grid-cols-5 py-14">
-                        <div className="box1 flex flex-col items-center justify-center">
-                            <LiaShippingFastSolid className='text-6xl' />
-                            <p className='font-medium mt-1'>Free Shipping</p>
-                            <p className='text-sm text-gray-700'>For all Orders Over $100</p>
-                        </div>
-                        <div className="box1 flex flex-col items-center justify-center">
-                            <img src="product-return.png" alt="" width={50} />
-                            <p className='font-medium mt-1'>30 Days Returns</p>
-                            <p className='text-sm text-gray-700'>For an Exchange Product</p>
-                        </div>
-                        <div className="box1 flex flex-col items-center justify-center">
-                            <IoWalletOutline className='text-6xl' />
-                            <p className='font-medium mt-1'>Secured Payment</p>
-                            <p className='text-sm text-gray-700'>Payment Cards Accepted</p>
-                        </div>
-                        <div className="box1 flex flex-col items-center justify-center">
-                            <ImGift className='text-6xl' />
-                            <p className='font-medium mt-1'>Special Gifts</p>
-                            <p className='text-sm text-gray-700'>Our First Product Order</p>
-                        </div>
-                        <div className="box1 flex flex-col items-center justify-center">
-                            <BiSupport className='text-6xl' />
-                            <p className='font-medium mt-1'>Support 24/7</p>
-                            <p className='text-sm text-gray-700'>Contact us Anytime</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {/* section two  */}
-            <section className='footer-section-two'>
-                <div className="container">
-                    <div className="main-container grid grid-cols-4 py-14">
+                    <div className="main-container grid grid-cols-4 py-7">
                         <div className="container-one border-r-[1px] border-gray-400 mr-14">
                             <h1 className='text-lg font-medium mb-4'>Contact us</h1>
                             <div className='text-gray-600 w-40 text-sm flex flex-col gap-3'>
@@ -101,7 +70,7 @@ const Footer = () => {
                 <div className="container flex items-center justify-between">
                     <div className="social-media flex gap-2">
                         <button className='p-1 border border-black rounded-full hover:border-primary hover:bg-primary group'>
-                            <FaFacebookF className='group-hover:text-white'/>
+                            <FaFacebookF className='group-hover:text-white '/>
                         </button>
                         <button className='p-1 border border-black rounded-full hover:border-primary hover:bg-primary group'>
                             <FaXTwitter className='group-hover:text-white'/>

@@ -40,7 +40,7 @@ const Navigation = () => {
                                 onMouseLeave={() => setHoveredFashion(false)}
                             >
                                 <Link
-                                    to="/"
+                                    to="/productlist"
                                     className="transition text-[rgba(0,0,0)] hover:text-[#ff5252]"
                                 >
                                     Fashion
